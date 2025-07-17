@@ -3,143 +3,322 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Padhai - Previous Year Papers</title>
-  <meta name="description" content="Access previous year papers for engineering subjects like PPS, Maths, Physics, and more." />
-  <meta name="author" content="Whatin.in" />
-  <link rel="icon" href="favicon.ico" />
-
+  <title>Topper Notes - AKTU B.Tech CSE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
+    :root {
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --secondary: #e0e7ff;
+      --bg: #f9fafb;
+      --text: #111827;
+      --card-bg: #ffffff;
+      --hover-bg: #f1f5ff;
     }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
     header {
-      background-color: #0059b3;
+      background-color: var(--primary);
       color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    main {
       padding: 2rem 1rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      color: #222;
       text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
-    .pdf-list {
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    nav {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: var(--primary-dark);
+      padding: 1rem;
       gap: 1rem;
     }
 
-    .pdf-item {
-      background: white;
-      border-left: 5px solid #0059b3;
-      border-radius: 6px;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .pdf-item strong {
+    nav button {
+      background-color: var(--primary);
+      border: none;
+      padding: 0.6rem 1.4rem;
       font-size: 1rem;
-      color: #333;
-      flex: 1 1 auto;
-    }
-
-    .pdf-item a {
-      background-color: #0059b3;
+      border-radius: 0.4rem;
       color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-size: 0.9rem;
-      transition: background-color 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s, transform 0.2s;
     }
 
-    .pdf-item a:hover {
-      background-color: #004080;
+    nav button:hover {
+      background-color: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .year {
+      margin-bottom: 2rem;
+      background: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      overflow: hidden;
+    }
+
+    .year h2 {
+      font-size: 1.6rem;
+      background-color: var(--secondary);
+      color: var(--primary-dark);
+      padding: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .year h2:hover {
+      background-color: #dbeafe;
+    }
+
+    .subjects {
+      display: none;
+      padding: 1rem 1.5rem;
+      animation: slideDown 0.4s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .subject {
+      margin-bottom: 2rem;
+    }
+
+    .subject h3 {
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+      color: var(--primary-dark);
+    }
+
+    .units {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .unit {
+      background-color: var(--hover-bg);
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+      transition: 0.3s ease;
+    }
+
+    .unit:hover {
+      background-color: var(--secondary);
+      transform: translateY(-4px);
+    }
+
+    .unit-title {
+      font-weight: bold;
+      margin-bottom: 0.8rem;
+    }
+
+    .unit-buttons {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .unit-buttons a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      background-color: var(--primary);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: 0.2s;
+    }
+
+    .unit-buttons a:hover {
+      background-color: var(--primary-dark);
+      transform: scale(1.05);
+    }
+
+    #about-section {
+      display: none;
+      background-color: var(--secondary);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-top: 4px solid var(--primary);
+    }
+
+    #about-section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    #about-section p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-top: 1rem;
+    }
+
+    #back-btn {
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: var(--primary);
+      color: white;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #back-btn:hover {
+      background-color: var(--primary-dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--primary-dark);
+      color: white;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     }
 
     @media (max-width: 600px) {
-      .pdf-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
+      .units {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Padhai: Previous Year Papers</h1>
+    <h1>Topper Notes - AKTU B.Tech CSE</h1>
   </header>
-  <main>
-    <h2>Available Subjects</h2>
-    <section class="pdf-list">
 
-      <div class="pdf-item">
-        <strong>Mathematics - 2</strong>
-        <a href="math-2.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
+  <nav>
+    <button onclick="showHome()">Home</button>
+    <button onclick="showAbout()">About</button>
+  </nav>
+
+  <!-- Home Section -->
+  <div id="home-section" class="container">
+    <div class="year">
+      <h2 onclick="toggleYear(this)">1st Year</h2>
+      <div class="subjects">
+        <!-- Subject 1 -->
+        <div class="subject">
+          <h3>Engineering Mathematics-I</h3>
+          <div class="units">
+            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+          </div>
+        </div>
+
+        <!-- Subject 2 -->
+        <div class="subject">
+          <h3>Programming for Problem Solving (PPS)</h3>
+          <div class="units">
+            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+          </div>
+        </div>
+
+        <!-- Subject 3 -->
+        <div class="subject">
+          <h3>Engineering Physics</h3>
+          <div class="units">
+            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="pdf-item">
-        <strong>Physics</strong>
-        <a href="physics.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
+    <div class="year"><h2>2nd Year (Coming Soon)</h2></div>
+    <div class="year"><h2>3rd Year (Coming Soon)</h2></div>
+    <div class="year"><h2>4th Year (Coming Soon)</h2></div>
+  </div>
 
-      <div class="pdf-item">
-        <strong>Chemistry</strong>
-        <a href="chemistry.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
+  <!-- About Section -->
+  <div id="about-section">
+    <h2>About This Website</h2>
+    <p>This platform provides AKTU B.Tech CSE students with unit-wise topper notes to help them prepare better for their exams. All notes are organized year-wise and subject-wise for easy access. The goal is to promote quality study material for every learner.</p>
+    <button id="back-btn" onclick="showHome()">← Back to Home</button>
+  </div>
 
-      <div class="pdf-item">
-        <strong>Electronics</strong>
-        <a href="electronics.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
+  <footer>
+    © 2025 Whatin Innovations. All rights reserved. | AKTU Topper Notes
+  </footer>
 
-      <div class="pdf-item">
-        <strong>PPS</strong>
-        <a href="PPS.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
+  <script>
+    function toggleYear(heading) {
+      const allSubjects = document.querySelectorAll('.subjects');
+      allSubjects.forEach(s => {
+        if (s !== heading.nextElementSibling) {
+          s.style.display = 'none';
+        }
+      });
 
-      <div class="pdf-item">
-        <strong>Mechanical</strong>
-        <a href="MECHANICAL.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
+      const subjects = heading.nextElementSibling;
+      if (subjects && subjects.style.display !== 'block') {
+        subjects.style.display = 'block';
+      } else {
+        subjects.style.display = 'none';
+      }
+    }
 
-      <div class="pdf-item">
-        <strong>Electrical</strong>
-        <a href="ELECTRICAL.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
+    function showAbout() {
+      document.getElementById('home-section').style.display = 'none';
+      document.getElementById('about-section').style.display = 'block';
+    }
 
-      <div class="pdf-item">
-        <strong>EVS</strong>
-        <a href="EVS.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
-
-      <div class="pdf-item">
-        <strong>Soft Skills</strong>
-        <a href="SOFT%20SKILLS.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-      </div>
-
-    </section>
-  </main>
+    function showHome() {
+      document.getElementById('home-section').style.display = 'block';
+      document.getElementById('about-section').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
