@@ -1,19 +1,55 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Topper Notes - AKTU B.Tech CSE | Whatin.in</title>
+
+ 
+  <meta name="title" content="Topper Notes - AKTU B.Tech CSE | Whatin.in">
+  <meta name="description" content="Get unit-wise topper notes for AKTU B.Tech CSE students. Explore padhai.whatin.in, unitwise.whatin.in, toppernotes.whatin.in — part of Whatin Innovations.">
+
+
+  <meta name="keywords" content="AKTU notes, BTech CSE notes, AKTU toppers, topper notes, Engineering notes, 1st year AKTU, AKTU CSE 1st Year, AKTU subjects, unit wise notes, aktu btech cse, whatin.in, padhai.whatin.in, unitwise.whatin.in, toppernotes.whatin.in, Whatin Innovations">
+
+
+  <link rel="canonical" href="https://padhai.whatin.in/" />
+
+
+  <meta name="author" content="Whatin Innovations">
+
+
+  <meta name="robots" content="index, follow">
+
+ 
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Topper Notes - AKTU B.Tech CSE | Whatin.in">
+  <meta property="og:description" content="Unit-wise AKTU notes by toppers for B.Tech CSE. View subject-wise study material on padhai.whatin.in, unitwise.whatin.in, toppernotes.whatin.in">
+  <meta property="og:image" content="whatinlogo.png"> 
+  <meta property="og:url" content="https://padhai.whatin.in">
+  <meta property="og:site_name" content="Whatin Innovations">
+
+
+  <link rel="icon" href="https://whatin.in/favicon.ico" type="image/x-icon">
+
+ 
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Topper Notes - AKTU B.Tech CSE</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #4f46e5;
-      --primary-dark: #3730a3;
-      --secondary: #e0e7ff;
-      --bg: #f9fafb;
-      --text: #111827;
-      --card-bg: #ffffff;
-      --hover-bg: #f1f5ff;
+      --primary-dark: #312e81;
+      --text: #1f2937;
+      --card-bg: rgba(255, 255, 255, 0.15);
+      --glass-border: rgba(255, 255, 255, 0.25);
     }
 
     * {
@@ -24,43 +60,45 @@
 
     body {
       font-family: 'Outfit', sans-serif;
-      background-color: var(--bg);
+      background: linear-gradient(135deg, #f9f9fb, #e3e8f0);
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     header {
-      background-color: var(--primary);
-      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #111827;
       padding: 2rem 1rem;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
     }
 
     header h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 700;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      background-color: var(--primary-dark);
-      padding: 1rem;
       gap: 1rem;
+      background-color: var(--primary-dark);
+      padding: 0.8rem;
     }
 
     nav button {
       background-color: var(--primary);
       border: none;
-      padding: 0.6rem 1.4rem;
+      padding: 0.6rem 1.2rem;
       font-size: 1rem;
-      border-radius: 0.4rem;
+      border-radius: 0.5rem;
       color: white;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s, transform 0.2s;
+      transition: all 0.3s;
     }
 
     nav button:hover {
@@ -75,24 +113,21 @@
     }
 
     .year {
-      margin-bottom: 2rem;
       background: var(--card-bg);
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
+      backdrop-filter: blur(14px);
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border: 1px solid var(--glass-border);
     }
 
     .year h2 {
       font-size: 1.6rem;
-      background-color: var(--secondary);
-      color: var(--primary-dark);
       padding: 1rem;
+      background-color: rgba(79, 70, 229, 0.1);
+      color: var(--primary-dark);
       cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .year h2:hover {
-      background-color: #dbeafe;
     }
 
     .subjects {
@@ -112,45 +147,35 @@
       }
     }
 
-    .subject {
-      margin-bottom: 2rem;
-    }
-
     .subject h3 {
-      margin-bottom: 0.8rem;
       font-size: 1.3rem;
-      color: var(--primary-dark);
+      margin-bottom: 0.8rem;
+      color: var(--primary);
     }
 
     .units {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
     }
 
     .unit {
-      background-color: var(--hover-bg);
+      background-color: rgba(255, 255, 255, 0.25);
       border-radius: 1rem;
       padding: 1rem;
       text-align: center;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
-      transition: 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s;
     }
 
     .unit:hover {
-      background-color: var(--secondary);
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.35);
     }
 
     .unit-title {
       font-weight: bold;
-      margin-bottom: 0.8rem;
-    }
-
-    .unit-buttons {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
+      margin-bottom: 0.5rem;
     }
 
     .unit-buttons a {
@@ -160,7 +185,7 @@
       color: white;
       padding: 0.4rem 0.8rem;
       border-radius: 6px;
-      transition: 0.2s;
+      transition: all 0.2s;
     }
 
     .unit-buttons a:hover {
@@ -170,24 +195,25 @@
 
     #about-section {
       display: none;
-      background-color: var(--secondary);
-      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.3);
+      border-top: 3px solid var(--primary-dark);
       text-align: center;
-      border-top: 4px solid var(--primary);
+      padding: 3rem 2rem;
+      border-radius: 1rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      backdrop-filter: blur(14px);
     }
 
     #about-section h2 {
       font-size: 2rem;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     #about-section p {
-      max-width: 800px;
-      margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #333;
       margin-top: 1rem;
+      font-size: 1.1rem;
+      color: #333;
     }
 
     #back-btn {
@@ -213,12 +239,15 @@
       color: white;
       margin-top: 2rem;
       font-size: 0.9rem;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
     }
 
     @media (max-width: 600px) {
       .units {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+      }
+
+      .year h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -234,44 +263,19 @@
     <button onclick="showAbout()">About</button>
   </nav>
 
-  <!-- Home Section -->
   <div id="home-section" class="container">
     <div class="year">
       <h2 onclick="toggleYear(this)">1st Year</h2>
       <div class="subjects">
         <!-- Subject 1 -->
         <div class="subject">
-          <h3>Mechanical</h3>
+          <h3>Engineering Mathematics-I</h3>
           <div class="units">
-            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="math-2.pdf">View</a><a href="math-2.pdf">Download</a></div></div>
-          </div>
-        </div>
-
-        <!-- Subject 2 -->
-        <div class="subject">
-          <h3>Programming for Problem Solving (PPS)</h3>
-          <div class="units">
-            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-          </div>
-        </div>
-
-        <!-- Subject 3 -->
-        <div class="subject">
-          <h3>Engineering Physics</h3>
-          <div class="units">
-            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
-            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="#">View</a><a href="#">Download</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 1</div><div class="unit-buttons"><a href="https://drive.google.com/file/d/1ZjLeaGosu1KvqdTWDmzaL3_DHP3XTRGN/view?usp=sharing">View</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 2</div><div class="unit-buttons"><a href="#">View</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 3</div><div class="unit-buttons"><a href="#">View</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 4</div><div class="unit-buttons"><a href="#">View</a></div></div>
+            <div class="unit"><div class="unit-title">Unit 5</div><div class="unit-buttons"><a href="#">View</a></div></div>
           </div>
         </div>
       </div>
@@ -282,10 +286,9 @@
     <div class="year"><h2>4th Year (Coming Soon)</h2></div>
   </div>
 
-  <!-- About Section -->
   <div id="about-section">
     <h2>About This Website</h2>
-    <p>This platform provides AKTU B.Tech CSE students with unit-wise topper notes to help them prepare better for their exams. All notes are organized year-wise and subject-wise for easy access. The goal is to promote quality study material for every learner.</p>
+    <p>This platform is built to support AKTU CSE students by providing curated unit-wise notes made by toppers. The aim is to offer well-organized, accessible and high-quality study resources for each subject and year.</p>
     <button id="back-btn" onclick="showHome()">← Back to Home</button>
   </div>
 
@@ -320,5 +323,6 @@
       document.getElementById('about-section').style.display = 'none';
     }
   </script>
+
 </body>
 </html>
